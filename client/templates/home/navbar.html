@@ -1,0 +1,35 @@
+<!--
+<template name="home">
+   <h1>Welcome to Party Planner</h1>
+</template>-->
+<template name="navbar">
+    <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Party Planner</a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/userDetails">User Details</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              {{> loginButtons}} <!-- here -->
+            </ul>
+        </div>
+    </div>
+
+</template>
+<template name="login">
+  {{#if currentUser}}
+    {{currentUser.services.facebook.name}} -
+    {{currentUser.services.facebook.gender}}
+      <button id="logout">Logout</button>
+  {{else}}
+      <button id="facebook-login" class="btn btn-default"> Login with Facebook</button>
+  {{/if}}
+</template>
