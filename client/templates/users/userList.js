@@ -27,5 +27,7 @@ var userList=[
 ];
 
 Template.userList.helpers({
-    users:userList
+    users:function(){
+        return Students.find();
+    }
 });
